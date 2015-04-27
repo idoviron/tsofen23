@@ -1,0 +1,56 @@
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle"
+                ng-init="navCollapsed = true"
+                ng-click="navCollapsed=!navCollapsed">
+
+            <span class="sr-only">Toggle</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand"
+           href="https://en.wikipedia.org/wiki/Main_Page">Wiki</a>
+    </div>
+    <div class="collapse navbar-collapse"
+         ng-init="navCollapsed = true"
+         ng-class="!navCollapsed && 'in'">
+        <ul class="nav navbar-nav">
+            <!--<li>-->
+            <!--<a href="#" ng-click="changeState('home')">Home</a>-->
+            <!--</li>-->
+            <!--<li >-->
+            <!--<a href="#" ng-click="changeState('about')">About</a>-->
+            <!--</li>-->
+            <!--<li class="active">-->
+            <!--<a href="#" ng-click="changeState('contact')">Contacts</a>-->
+            <!--</li>-->
+                <li ng-repeat="st in allStates" class="{{st.isActive}}">
+                <a href="" ng-click="changeState(st.theState)">
+                    {{st.theName}}
+                </a>
+            </li>
+            <li class="btn-group" dropdown is-open="status.isopen">
+                <a href="#" type="button" class="dropdown-toggle"
+                   dropdown-toggle ng-disable="disabled">
+                    Activities
+                    <span class="caret"></span>
+                </a>
+                
+                <ul class="dropdown-menu" role="menu">
+                    <li ng-repeat="ac in allActivitys" class="{{ac.isActive}}">
+                    <a href="" ng-click="changeState(ac.theState)">{{ac.theName}}</a></li>
+
+
+                    <!--<li><a href="#">Another action</a></li>-->
+                    <!--<li><a href="#">Something else here</a></li>-->
+                    <!--<li class="divider"></li>-->
+                    <!--<li><a href="#">Separated link</a></li>-->
+                    <!--<li class="divider"></li>-->
+                    <!--<li><a href="#">One more separated link</a></li>-->
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
