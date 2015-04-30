@@ -4,15 +4,15 @@
 
 clubItModuleVar.service('navbarService', function () {
     this.allStates = [
-        new RState('Main','main','active'),
-        new RState('About','about',''),
-        new RState('Contacts','contacts','')
+        new RState('דף ראשי','main','active'),
+        new RState('מידע נוסף','about',''),
+        new RState('אנשי קשר','contacts','')
 
 
         //new RState('New','new','')
     ];
 
-    this.allActivitys = [new RState('Activity','activity','')];
+    this.allActivitys = [new RState('פעיליות','activity',''),new RState('2פעיליות','activity2','')];
 
     this.initState = function (theName) {
         for(st in this.allStates)
