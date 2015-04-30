@@ -2,13 +2,15 @@
  * Created by Admin on 4/26/2015.
  */
 
-clubItModuleVar.service('navbarService', function () {
+clubItModuleVar.service('navbarService', function ($modal) {
+
+
+    this.photoSrc="";
+
     this.allStates = [
+        new RState('אנשי קשר','contacts',''),
         new RState('דף ראשי','main','active'),
-        new RState('מידע נוסף','about',''),
-        new RState('אנשי קשר','contacts','')
-
-
+        new RState('מידע נוסף','about','')
         //new RState('New','new','')
     ];
 
@@ -25,6 +27,26 @@ clubItModuleVar.service('navbarService', function () {
                 this.allStates[st].isActive ="";
         }
     }
+    
+    this.LogoClick = function () {
+        var modalInstance= $modal.open({
+            templateUrl: 'modals/uploadPhoto/uploadPhoto.html',
+            controller: 'UploadModalController',
+            size: 'sm' //'lg'
+
+        });
+
+        modalInstance.result.then(
+            function(returnValue){
+                //$scope.resultFromDialog2=returnValue;
+                this.photoSrc=returnValue;
+            },
+            function(){
+
+            }
+        );
+    }
+    
 });
 
 

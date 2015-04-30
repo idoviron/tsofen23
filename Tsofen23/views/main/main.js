@@ -6,6 +6,10 @@ clubItModuleVar.controller('MainController', function($scope,$state,$http,navbar
 
     $scope.allStates = navbarService.allStates;
     $scope.allActivitys = navbarService.allActivitys;
+    $scope.LogoClick = navbarService.LogoClick;
+    $scope.photoSrc=navbarService.photoSrc;
+
+
     $scope.name='Main';
     navbarService.initState($scope.name);
     $scope.changeState = function(text)

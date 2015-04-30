@@ -1,0 +1,19 @@
+
+
+<div class="modal-header">
+    <h1 class="modal-title">Uploading new Logo</h1>
+</div>
+<div class="modal-body">
+    <div>
+        <input type="file" value="CHOOSE FILE"
+               onchange="angular.element(this).scope().uploadFile(this.files)"/>
+
+        <br/>
+        <img ng-src="{{imageName}}" alt="" width="300"/>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="bt btn-primary" ng-click="ok()">OK</button>
+    <button class="bt btn-warning" ng-click="cancel()">Cancel</button>
+</div>
+
