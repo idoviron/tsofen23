@@ -1,7 +1,7 @@
 /**
  * Created by me on 26/04/2015.
  */
-clubItModuleVar.factory('parseClassFactory', ['$http','globalParseConfiguration', function($http) {
+clubItModuleVar .factory('parseClassFactory', ['$http','globalParseConfiguration', function($http) {
 
 
     $httpProvider.defaults.headers.get = {

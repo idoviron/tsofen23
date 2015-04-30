@@ -1,5 +1,5 @@
 <nav class="navbar navbar-inverse" role="navigation">
-    <div class="navbar-header">
+    <div class="navbar-header" style="float:right">
 
         <button type="button" class="navbar-toggle"
                 ng-init="navCollapsed = true"
@@ -15,7 +15,7 @@
     </div>
     <div class="collapse navbar-collapse"
          ng-init="navCollapsed = true"
-         ng-class="!navCollapsed && 'in'">
+         ng-class="!navCollapsed && 'in'" style="float:right">
         <ul class="nav navbar-nav">
             <!--<li>-->
             <!--<a href="#" ng-click="changeState('home')">Home</a>-->
@@ -26,11 +26,7 @@
             <!--<li class="active">-->
             <!--<a href="#" ng-click="changeState('contact')">Contacts</a>-->
             <!--</li>-->
-                <li ng-repeat="st in allStates" class="{{st.isActive}}">
-                <a href="" ng-click="changeState(st.theState)">
-                    {{st.theName}}
-                </a>
-            </li>
+
             <li class="btn-group" dropdown is-open="status.isopen">
                 <a href="#" type="button" class="dropdown-toggle"
                    dropdown-toggle ng-disable="disabled">
@@ -50,6 +46,11 @@
                     <!--<li class="divider"></li>-->
                     <!--<li><a href="#">One more separated link</a></li>-->
                 </ul>
+            </li>
+            <li ng-repeat="st in allStates" class="{{st.isActive}}">
+                <a href="" ng-click="changeState(st.theState)">
+                    {{st.theName}}
+                </a>
             </li>
         </ul>
     </div>
