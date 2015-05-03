@@ -15,10 +15,16 @@ clubItModuleVar.controller("ActivityController", function ($scope,$state,navbarS
     $scope.changeState = function(text)
     {
         $state.go(text);
-    };
+
+    }
+    $scope.openLogInDialog = function(){
+        navbarService.openDialog();
+    }
+
+
     $scope.watch($scope.photoSrc, function () {
         
-    })
+    });
     
 
 });

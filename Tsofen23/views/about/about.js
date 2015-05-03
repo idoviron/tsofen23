@@ -16,4 +16,15 @@ clubItModuleVar.controller("AboutController", function ($scope,$state,navbarServ
         $state.go(text);
     }
 
+    $scope.openLogInDialog = function(){
+        navbarService.openDialog();
+    }
+
+    console.log(navbarService.userName);
+    $scope.userName = "";
+    $scope.$watch('userName',function(){
+        $scope.userName = navbarService.userName;
+
+    });
+    console.log( $scope.userName);
 });

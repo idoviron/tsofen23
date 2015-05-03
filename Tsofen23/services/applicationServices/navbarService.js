@@ -15,7 +15,8 @@ clubItModuleVar.service('navbarService', function ($modal) {
     ];
 
     this.allActivitys = [new RState('פעיליות','activity',''),new RState('2פעיליות','activity2','')];
-
+    this.userName="gg";
+    this.userPassword="";
     this.initState = function (theName) {
         for(st in this.allStates)
         {
@@ -26,6 +27,27 @@ clubItModuleVar.service('navbarService', function ($modal) {
             else
                 this.allStates[st].isActive ="";
         }
+    }
+
+
+
+    this.openDialog = function(){
+        var modalInstance =
+            $modal.open({
+                templateUrl:'modals/logInModal/logInModal.html',
+                controller :'LogInModalController',
+                size : 'lg'
+            });
+        modalInstance.result.then(
+            function(returnValue){
+                this.userName = returnValue.userInput;
+                this.userPassword = returnValue.passwordInput;
+
+            },
+            function(){
+
+            }
+        );
     }
     
     this.LogoClick = function () {

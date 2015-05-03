@@ -16,6 +16,9 @@ clubItModuleVar.controller("ContactsController", function ($scope,$state,navbarS
     {
         $state.go(text);
     }
+    $scope.openLogInDialog = function(){
+        navbarService.openDialog();
+    }
 
 });
 

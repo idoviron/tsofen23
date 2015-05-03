@@ -16,6 +16,9 @@ clubItModuleVar.controller('MainController', function($scope,$state,$http,navbar
     {
         $state.go(text);
     }
+    $scope.openLogInDialog = function(){
+        navbarService.openDialog();
+    }
 
 });
 
