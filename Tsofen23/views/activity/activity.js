@@ -1,25 +1,20 @@
 /**
  * Created by Admin on 4/27/2015.
  */
-clubItModuleVar.controller("ActivityController", function ($scope,$state,navbarService) {
-
-    $scope.allStates = navbarService.allStates;
-    $scope.allActivitys = navbarService.allActivitys;
-    $scope.LogoClick = navbarService.LogoClick;
-    $scope.photoSrc=navbarService.photoSrc;
+clubItModuleVar.controller("ActivityController", function ($scope,$state,navbarService,$controller) {
+    $controller('ParentController',{$scope : $scope});
 
 
-    
-    $scope.name='Activity';
-    navbarService.initState($scope.name);
-    $scope.changeState = function(text)
-    {
-        $state.go(text);
-
-    }
-    $scope.openLogInDialog = function(){
-        navbarService.openDialog();
-    }
+    $scope.changeState = function(theState, theName){
+        if (theState == 'activity') {
+            $scope.name = theName;
+            navbarService.initState($scope.name);
+        }
+        else {
+            navbarService.name = theName;
+            $state.go(theState);
+        }
+    };
 
 
     $scope.watch($scope.photoSrc, function () {

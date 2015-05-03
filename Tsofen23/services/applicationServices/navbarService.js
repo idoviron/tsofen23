@@ -6,19 +6,20 @@ clubItModuleVar.service('navbarService', function ($modal) {
 
 
     this.photoSrc="";
+    this.name="דף ראשי";
 
     this.allStates = [
         new RState('אנשי קשר','contacts',''),
-        new RState('דף ראשי','main','active'),
-        new RState('מידע נוסף','about','')
+        new RState('מידע נוסף','about',''),
+        new RState('דף ראשי','main','active')
         //new RState('New','new','')
     ];
 
-    this.allActivitys = [new RState('פעיליות','activity',''),new RState('2פעיליות','activity2','')];
+    this.allActivities = [];
     this.userName="gg";
     this.userPassword="";
     this.initState = function (theName) {
-        for(st in this.allStates)
+        for(var st in this.allStates)
         {
             if(this.allStates[st].theName==theName)
             {
