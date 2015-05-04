@@ -1,15 +1,15 @@
 
 
 <div class="modal-header">
-    <h1 class="modal-title">Uploading new Logo</h1>
+    <h1 class="modal-title">Uploading new Photo</h1>
 </div>
 <div class="modal-body">
     <div>
-        <input type="file" value="CHOOSE FILE"
+        <input type="file" value="Choose Image"
                onchange="angular.element(this).scope().uploadFile(this.files)"/>
 
         <br/>
-        <img ng-src="{{imageName}}" alt="" width="300"/>
+        <img ng-src="{{imageName}}" alt="" width="50"/>
     </div>
 </div>
 <div class="modal-footer">

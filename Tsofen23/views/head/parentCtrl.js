@@ -3,17 +3,17 @@
  */
 
 clubItModuleVar.controller("ParentController",function($scope,
-                                                       $state,navbarService){
+                                                       $state,$modal,navbarService){
     $scope.init = function(){
         $scope.allStates = navbarService.allStates;
         $scope.allActivitys = navbarService.allActivitys;
         $scope.LogoClick = navbarService.LogoClick;
-        $scope.photoSrc=navbarService.photoSrc;
         $scope.name=navbarService.name;
         navbarService.initState($scope.name);
     };
     $scope.init();
-
+    $scope.photoSrc;
+    $scope.HeaderImage;
     $scope.changeState = function(theState, theName){
         navbarService.name = theName;
         $state.go(theState);
@@ -37,7 +37,45 @@ clubItModuleVar.controller("ParentController",function($scope,
         navbarService.allActivities.push(act);
 
     }
+    $scope.LogoClick = function () {
+        var modalInstance= $modal.open({
+            templateUrl: 'modals/uploadPhoto/uploadPhoto.html',
+            controller: 'UploadModalController',
+            size: 'sm' //'lg'
 
+        });
+
+        modalInstance.result.then(
+            function(returnValue){
+                //$scope.resultFromDialog2=returnValue;
+                $scope.photoSrc=returnValue;
+                console.log($scope.photoSrc);
+            },
+            function(){
+
+            }
+        );
+    };
+    $scope.CallFunc = function() {
+        var modalInstance= $modal.open({
+            templateUrl: 'modals/uploadPhoto/uploadPhoto.html',
+            controller: 'UploadModalController',
+            size: 'sm' //'lg'
+
+        });
+
+        modalInstance.result.then(
+            function(returnValue){
+                //$scope.resultFromDialog2=returnValue;
+                $scope.HeaderImage=returnValue;
+                console.log($scope.HeaderImage);
+            },
+            function(){
+
+            }
+        );
+
+    }
 
 });
 

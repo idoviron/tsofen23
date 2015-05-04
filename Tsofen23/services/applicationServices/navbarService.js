@@ -1,11 +1,9 @@
 /**
  * Created by Admin on 4/26/2015.
  */
-
 clubItModuleVar.service('navbarService', function ($modal) {
 
 
-    this.photoSrc="";
     this.name="דף ראשי";
 
     this.allStates = [
@@ -28,7 +26,7 @@ clubItModuleVar.service('navbarService', function ($modal) {
             else
                 this.allStates[st].isActive ="";
         }
-    }
+    };
 
 
 
@@ -46,29 +44,11 @@ clubItModuleVar.service('navbarService', function ($modal) {
 
             },
             function(){
-
             }
         );
-    }
+    };
     
-    this.LogoClick = function () {
-        var modalInstance= $modal.open({
-            templateUrl: 'modals/uploadPhoto/uploadPhoto.html',
-            controller: 'UploadModalController',
-            size: 'sm' //'lg'
 
-        });
-
-        modalInstance.result.then(
-            function(returnValue){
-                //$scope.resultFromDialog2=returnValue;
-                this.photoSrc=returnValue;
-            },
-            function(){
-
-            }
-        );
-    }
     
 });
 

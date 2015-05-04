@@ -1,0 +1,25 @@
+body {
+    background: #eee;
+    text-align: center;
+    padding: 0 25px;
+    background-position: top;
+    background-color: #245269;
+    background-size: cover;
+    color: #000000;
+}
+.navbar .collapse .nav> li >a {
+    color: #ffffff;
+}
+.headerClass{
+    /*background-image: url("http://www.partysantodomingo.com/img/upload/1353/Party%20Santo%20Domingo%2075.jpg");*/
+    background-color: #245269;
+    background-position: center;
+    background-size: cover;
+
+}
+.HeaderAndNavbarClass{
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.angular-google-map-container { width: 600px; height: 400px; }
