@@ -7,13 +7,16 @@ clubItModuleVar.controller("ParentController",function($scope,
     $scope.init = function(){
         $scope.allStates = navbarService.allStates;
         $scope.allActivitys = navbarService.allActivitys;
-        $scope.LogoClick = navbarService.LogoClick;
+        $scope.HeaderImage=navbarService.HeaderImage;
+        $scope.photoSrc=navbarService.photoSrc;
         $scope.name=navbarService.name;
         navbarService.initState($scope.name);
     };
     $scope.init();
-    $scope.photoSrc;
-    $scope.HeaderImage;
+    //$scope.photoSrc;
+    //$scope.HeaderImage=
+    //    'http://www.partysantodomingo.com/img/upload/1353/' +
+    //    'Party%20Santo%20Domingo%2075.jpg';
     $scope.changeState = function(theState, theName){
         navbarService.name = theName;
         $state.go(theState);
@@ -47,8 +50,8 @@ clubItModuleVar.controller("ParentController",function($scope,
 
         modalInstance.result.then(
             function(returnValue){
-                //$scope.resultFromDialog2=returnValue;
                 $scope.photoSrc=returnValue;
+                navbarService.photoSrc=returnValue;
                 console.log($scope.photoSrc);
             },
             function(){
@@ -68,6 +71,7 @@ clubItModuleVar.controller("ParentController",function($scope,
             function(returnValue){
                 //$scope.resultFromDialog2=returnValue;
                 $scope.HeaderImage=returnValue;
+                navbarService.HeaderImage=returnValue;
                 console.log($scope.HeaderImage);
             },
             function(){

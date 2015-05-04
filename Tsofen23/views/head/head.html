@@ -1,58 +1,59 @@
 
 <div class="HeaderAndNavbarClass" ng-dblclick="CallFunc()">
-    <div>
-        <nav class="navbar navbar-inverse" role="navigation">
-            <div class="navbar-header" style="float:right" >
+        <div class="row">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header " style="float:right" >
 
-                <button type="button" class="navbar-toggle"
-                        ng-init="navCollapsed = true"
-                        ng-click="navCollapsed=!navCollapsed">
+                    <button type="button" class="navbar-toggle"
+                            ng-init="navCollapsed = true"
+                            ng-click="navCollapsed=!navCollapsed">
 
-                    <span class="sr-only">Toggle</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand">
-                    <img ng-src="{{photoSrc}}" style="padding-bottom: 3px"
-                         width="40" height="30"
-                            ng-click="LogoClick()"
-                            />
-                </a>
+                        <span class="sr-only">Toggle</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">
+                        <img ng-src="{{photoSrc}}" style="padding-bottom: 3px"
+                             width="40" height="30"
+                                ng-click="LogoClick()"
+                                />
+                    </a>
 
-            </div>
-            <div class="collapse navbar-collapse"
-                 ng-init="navCollapsed = true"
-                 ng-class="!navCollapsed && 'in'" style="float:right">
-                <ul class="nav navbar-nav" >
-                    <li class="btn-group" dropdown is-open="status.isopen">
+                </div>
+                <div class="collapse navbar-collapse"
+                     ng-init="navCollapsed = true"
+                     ng-class="!navCollapsed && 'in'" style="float:right">
+                    <ul class="nav navbar-nav" >
+                        <li class="btn-group" dropdown is-open="status.isopen">
 
-                        <a href="#" type="button" class="dropdown-toggle"
-                           dropdown-toggle ng-disable="disabled">
-                            Activities
-                            <span class="caret"></span>
-                        </a>
+                            <a href="#" type="button" class="dropdown-toggle"
+                               dropdown-toggle ng-disable="disabled">
+                                Activities
+                                <span class="caret"></span>
+                            </a>
 
-                        <ul class="dropdown-menu" role="menu" >
-                            <li ng-repeat="ac in allActivitys" class="{{ac.isActive}}" >
-                            <a href="" ng-click="changeState(ac.theState,ac.theName)">{{ac.theName}}</a></li>
-                        </ul>
+                            <ul class="dropdown-menu" role="menu" >
+                                <li ng-repeat="ac in allActivitys" class="{{ac.isActive}}" >
+                                <a href="" ng-click="changeState(ac.theState,ac.theName)">{{ac.theName}}</a></li>
+                            </ul>
 
-                    </li>
-                    <li ng-repeat="st in allStates" class="{{st.isActive}}">
-                        <a  href="" class="color-me" ng-click="changeState(st.theState,st.theName)">
-                            {{st.theName}}
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div style="float:left; padding-top: 8px ;padding-left: 5px; ">
-                <button class="btn btn-danger" ng-click="openLogInDialog()">sign in</button>
-                <span style="color:#269abc;">..</span>
-            <br/>
-            </div>
-        </nav>
-    </div>
-    <img ng-src="{{HeaderImage}}"  />
-
+                        </li>
+                        <li ng-repeat="st in allStates" class="{{st.isActive}}">
+                            <a  href="" class="color-me" ng-click="changeState(st.theState,st.theName)">
+                                {{st.theName}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div style="float:left; padding-top: 8px ;padding-left: 5px; ">
+                    <button class="btn btn-danger" ng-click="openLogInDialog()">Sign in</button>
+                    <span style="color:#269abc;">..</span>
+                <br/>
+                </div>
+            </nav>
+        </div>
+        <div class="row" style="">
+            <img ng-src="{{HeaderImage}}" class="img-responsive center-block" />
+        </div>
 </div>
